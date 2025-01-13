@@ -1,0 +1,26 @@
+---
+title: "Chapter12"
+output: html_document
+date: "2025-01-13"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+First, we load the data:)
+
+```{r comments, echo=TRUE}
+articleHitsComments<-read.csv("hfda_ch12_articleHitsComments.csv",header=TRUE)
+```
+
+## Including Plots
+
+and we add lattice:
+
+```{r pressure, echo=TRUE}
+library(lattice)
+xyplot(webHits ~ commentCount | authorName, data = articleHitsComments)
+```
